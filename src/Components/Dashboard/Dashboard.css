@@ -1,0 +1,69 @@
+.dashboard-main {
+    background-color: rgb(241, 242, 243);
+    height: fit-content;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr)); /* Use minmax(0, 1fr) for flexible width */
+    grid-gap: 10px; /* Adjust grid gap */
+    justify-items: stretch; /* Ensure items stretch to fill columns */
+    align-items: flex-start;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.dashboard-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0; /* Remove side margins to prevent overflow */
+}
+
+.dashboard-list-header-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Flexible width */
+    margin: 10px 0; /* Adjust margin for spacing between users */
+}
+
+.dashboard-list-header-controls-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Align items to the start */
+    align-items: center; /* Center items vertically */
+}
+
+.dashboard-list-header {
+    margin-left: 5px; /* Reduce margin for closer proximity */
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* Add margin to the plus icon for better spacing */
+.dashboard-list-header-controls > div {
+    margin-left: 8px; /* Add some space between the header and the icons */
+}
+
+.dashboard-list-items-count {
+    margin: 0 8px;
+    color: #808080;
+}
+
+/* Responsive layout for small screens */
+@media screen and (max-width: 1200px) {
+    .dashboard-main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Small screens (phones, etc.): 1 column */
+@media screen and (max-width: 768px) {
+    .dashboard-main {
+        grid-template-columns: 1fr;
+        justify-items: center; /* Center items for single column */
+    }
+}
